@@ -34,13 +34,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x android/gradlew
-        working-directory: .
-
       - name: Build Debug APK
-        run: ./android/gradlew assembleDebug --no-daemon
-        working-directory: .
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon
         env:
           JAVA_HOME: /opt/java/openjdk
 
