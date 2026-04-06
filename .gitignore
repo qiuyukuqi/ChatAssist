@@ -1,0 +1,10 @@
+# Gradle
+android/.gradle/
+android/app/build/
+android/build/
+
+# Local config
+*.local
+
+# APK (already included as artifact)
+# ChatAssist-debug.apk

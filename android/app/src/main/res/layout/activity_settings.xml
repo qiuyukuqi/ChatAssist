@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- 标题 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="AI设置"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- API配置 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="API配置"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- AI提供商 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AI服务商"
+                android:textSize="13sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="8dp"/>
+
+            <Spinner
+                android:id="@+id/ai_provider_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/spinner_background"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- API Key -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="API Key"
+                android:textSize="13sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/api_key_input"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="输入API密钥"
+                android:inputType="textPassword"
+                android:background="@drawable/input_background"
+                android:paddingHorizontal="12dp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- API Endpoint -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="API Endpoint"
+                android:textSize="13sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="8dp"/>
+
+            <EditText
+                android:id="@+id/api_endpoint_input"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="https://api.minimax.chat/v1"
+                android:inputType="textUri"
+                android:background="@drawable/input_background"
+                android:paddingHorizontal="12dp"/>
+
+        </LinearLayout>
+
+        <!-- 回复设置 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="回复设置"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- 回复风格 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="默认回复风格"
+                android:textSize="13sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="8dp"/>
+
+            <Spinner
+                android:id="@+id/reply_style_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/spinner_background"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Max Tokens -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="最大回复长度"
+                android:textSize="13sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <SeekBar
+                    android:id="@+id/max_tokens_slider"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="500"
+                    android:progress="200"/>
+
+                <TextView
+                    android:id="@+id/max_tokens_value"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="200 tokens"
+                    android:textSize="12sp"
+                    android:textColor="#888888"
+                    android:gravity="end"/>
+
+            </LinearLayout>
+
+            <!-- Min Confidence -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="最低置信度"
+                android:textSize="13sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <SeekBar
+                    android:id="@+id/min_confidence_slider"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="100"
+                    android:progress="30"/>
+
+                <TextView
+                    android:id="@+id/min_confidence_value"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="30%"
+                    android:textSize="12sp"
+                    android:textColor="#888888"
+                    android:gravity="end"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 体验设置 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_background"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="体验设置"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- 自动粘贴 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="自动复制到剪贴板"
+                    android:textSize="14sp"
+                    android:textColor="#333333"/>
+
+                <Switch
+                    android:id="@+id/auto_paste_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <!-- 震动反馈 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="震动反馈"
+                    android:textSize="14sp"
+                    android:textColor="#333333"/>
+
+                <Switch
+                    android:id="@+id/haptic_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <!-- 提示音 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="提示音"
+                    android:textSize="14sp"
+                    android:textColor="#333333"/>
+
+                <Switch
+                    android:id="@+id/sound_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <!-- 显示推理过程 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="显示置信度"
+                    android:textSize="14sp"
+                    android:textColor="#333333"/>
+
+                <Switch
+                    android:id="@+id/show_reasoning_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 保存按钮 -->
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="保存设置"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button_primary_background"/>
+
+    </LinearLayout>
+
+</ScrollView>

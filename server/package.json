@@ -1,0 +1,12 @@
+{
+  "name": "chatassist-server",
+  "version": "1.0.0",
+  "description": "ChatAssist AI Server - Optional middleware for AI inference",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["chatassist", "ai", "api"],
+  "author": "Lisa",
+  "license": "MIT"
+}
