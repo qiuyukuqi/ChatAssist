@@ -11,6 +11,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     
+    env:
+      JAVA_HOME: /opt/java/openjdk
+      ANDROID_HOME: /opt/android-sdk
+      
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -43,8 +47,6 @@ jobs:
           chmod +x gradlew
           # Run gradle
           bash ./gradlew assembleDebug --no-daemon
-        env:
-          JAVA_HOME: /opt/java/openjdk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
