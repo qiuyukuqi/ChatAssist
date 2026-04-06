@@ -37,8 +37,12 @@ jobs:
       - name: Build Debug APK
         run: |
           cd android
+          # Convert line endings for gradlew
+          sed -i 's/\r$//' gradlew
+          # Make executable
           chmod +x gradlew
-          ./gradlew assembleDebug --no-daemon
+          # Run gradle
+          bash ./gradlew assembleDebug --no-daemon
         env:
           JAVA_HOME: /opt/java/openjdk
 
